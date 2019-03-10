@@ -30,15 +30,7 @@ var incorrect = 0;
 var clockRunning = false;
 var time = 3;
 
-var intervalId;
-
-function correct(){
-    correct++;
-}
-
-function incorrect(){
-    incorrect++;
-}
+// var intervalId;
 
 function start(){
     
@@ -51,12 +43,6 @@ function start(){
 
 }
 
-function scoreTotal(){
-        
-
-
-        // $("#1492").on("click", )}
-
 function count() {
     if (time > 0){
         time--;
@@ -66,7 +52,13 @@ function count() {
 
     else{
         clockRunning = false;
+        $(".questionArea").hide();
+        $("#start").hide();
         $("#gameOverDisplay").show();
+
+        $("#correct").show();
+        $("#incorrect").show();
+
     }
  
 }
@@ -91,5 +83,13 @@ function timeConverter(t) {
 
     return minutes + ":" + seconds;    
 }
+
+  
+$('input[name="radio1"]').on("click", function(){
+        correct++;
+        alert(correct);
+
+});
+
 
 });
