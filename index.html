@@ -8,12 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/images.css">
-    
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
-    <!-- Script -->
-    <script type="text/javascript" src="app.js"></script>
-    
+        
     <title>Trivia Game</title>
 </head>
 
@@ -27,9 +22,17 @@
 <p class="instructions">Answer all of the questions before time runs out!</p>
 </div>
 
-<div id="display">01:30</div>
 
 
+<div id="gameStartDisplay">00:03</div>
+<div id="gameOverDisplay">Time's up!</div>
+
+<div id="button">
+    <button id="start">Start Game</button>
+</div>
+
+
+<div class="questionArea">
 <div class="question">
 <p class="q1">1.) When was America discovered?</p>
 <label class="container" id="2006">2006
@@ -256,7 +259,7 @@
 
 
 <div class="question">
-<p class="q12">12.) What was the name of the department store in Miracle on 34th St.?</p>
+<p class="q12">12.) What was the name of the department store in the movie 'Miracle on 34th St.'?</p>
 <label class="container">Sears
   <input type="radio" checked="checked" name="radio">
   <span class="checkmark"></span>
@@ -356,6 +359,16 @@
   <span class="checkmark"></span>
 </label>
 </div>
+</div>
+
+<!-- </div> -->
+
+   <!-- jQuery -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+   <!-- Script -->
+   <script type="text/javascript" src="assets/javascript/app.js"></script>
+
 
 </body>
 </html>

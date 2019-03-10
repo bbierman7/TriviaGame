@@ -1,18 +1,12 @@
 $(document).ready(function() {
 
-//User clicks Start, and game begins
-
-//New page loads, and timer counts down from 2:00
-
-//Questions has 4 answer choices. User can only click one option.
-
-//After all questions are answered in correct time, user clicks Submit
-
-//New page loads showing number correct and number incorrect
-
 window.onload = function() {
-    $("#startGame").on("click", start);
-}
+    // $(".questionArea").hover(function(){
+        $(".questionArea").hide();
+        $("#gameOverDisplay").hide();
+    // });
+    $("#start").on("click", start);
+};
 
 var questions = ["1.) When was America discovered?", 
 "2.) How many continents are there on planet Earth?",
@@ -34,17 +28,17 @@ var questions = ["1.) When was America discovered?",
 var correct = 0;
 var incorrect = 0;
 var clockRunning = false;
-var time = 90;
+var time = 3;
 
-//This variable holds our setInterval that starts the timer
 var intervalId;
-//Q1: if user selects 1493, correct++. Else, correct--
 
-// $("#1492").on("click",function(){
-//     correct++;
-//     alert("you got it right!")
-// }); 
+function correct(){
+    correct++;
+}
 
+function incorrect(){
+    incorrect++;
+}
 
 function start(){
     
@@ -53,15 +47,30 @@ function start(){
         intervalId = setInterval(count, 1000);
         clockRunning = true;
     }
+    $(".questionArea").show();
+
 }
 
+function scoreTotal(){
+        
+
+
+        // $("#1492").on("click", )}
 
 function count() {
-    time--;
-    
-    var formattedTime = timeConverter(time)
-    $("#display").text(formattedTime)
+    if (time > 0){
+        time--;
+        var formattedTime = timeConverter(time);
+        $("#gameStartDisplay").text(formattedTime);
+    }
+
+    else{
+        clockRunning = false;
+        $("#gameOverDisplay").show();
+    }
+ 
 }
+
 
 function timeConverter(t) {
 
@@ -80,7 +89,7 @@ function timeConverter(t) {
         minutes = "0" + minutes;
     }
 
+    return minutes + ":" + seconds;    
 }
-
 
 });

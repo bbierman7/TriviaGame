@@ -19,7 +19,7 @@ body{
     background: url(../images/background.jpg)
 }
 
-#display{
+#gameStartDisplay{
     text-align: center;
     color:black;
     background-color: white;
@@ -27,9 +27,24 @@ body{
     margin-left:25%;
 }
 
+#gameOverDisplay{
+        text-align: center;
+        color:black;
+        background-color: white;
+        width:50%;
+        margin-left:25%;
+    }
+
+#start{
+    width:20%;
+    margin-left:40%;
+}
+
 p{
     color:white;
 }
+
+
 
 .question{
     width:30%;
