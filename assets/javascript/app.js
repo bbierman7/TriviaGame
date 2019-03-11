@@ -4,6 +4,7 @@ window.onload = function() {
     $(".questionArea").hide();
     $("#gameOverDisplay").hide();
     $("#start").on("click", start);
+    $("#restart").hide();
 };
 
 var questions = ["1.) When was America discovered?", 
@@ -102,6 +103,10 @@ incorrect++;
 $("#incorrect").text(incorrect);
 });
 
+// $("").on("click", function() {
+// unanswered++;
+// $("#unanswered").text(unanswered);
+// });
 
 // $('input[name="radio1a"]').on("click", function() {
 //   incorrect++;
@@ -438,6 +443,7 @@ $("#incorrect").text(incorrect);
 
 
 
+
   //15th question
   $('input[id="radio15a"]').on("click", function() {
     correct++;
@@ -494,9 +500,33 @@ $("#submit").on("click", function(){
 
     $("#correct").show();
     $("#incorrect").show();
+    $("#restart").show();
 });
 
-//Play again
+//Restart
+$("#restart").on("click", function (){
+  time = 61;
+  start;
+  $(".questionArea").show();
+  $("#restart").hide();
+  $("#gameOverDisplay").hide();
+  $("#correct").hide();
+  $("#incorrect").hide();
+
+});
+
+// $("button").click(function(){
+//   $("p").hide(1000);
+// });
+//   function restart(){
     
+//     //Use setInterval to start the count here and set the clock to running
+//     if (!clockRunning){
+//         intervalId = setInterval(count, 1000);
+//         clockRunning = true;
+//     }
+//     $(".questionArea").show();
+
+// }
 
 });
