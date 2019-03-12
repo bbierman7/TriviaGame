@@ -19,17 +19,19 @@ body{
     background: url(../images/background.jpg)
 }
 
-body{
-    background-color:#d2d2d2;
-   }
-   #canvas{
-    background-color:#000;
-    display:block;
-    margin:auto;
-   }
-   #logo{
-    display:none;
-   }
+.questionArea{
+    margin-top:19px;
+}
+
+#canvas{
+background-color:#000;
+display:block;
+margin:auto;
+}
+
+#logo{
+display:none;
+}
 
 #gameStartDisplay{
     text-align: center;
@@ -46,11 +48,12 @@ body{
         width:50%;
         margin-top:10%;
         margin-left:25%;
-    }
+}
 
 #start{
     width:20%;
     margin-left:40%;
+    box-sizing: 5
 }
 
 #restart{

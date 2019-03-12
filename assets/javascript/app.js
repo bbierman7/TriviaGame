@@ -28,14 +28,11 @@ window.onload = function() {
 
 var correct = 0;
 var incorrect = 0;
-var unanswered = 0;
 var clockRunning = false;
 var time = 60;
 
-// var intervalId;
-
+//Start clock when user clocks "Start"
 function start(){
-    
     //Use setInterval to start the count here and set the clock to running
     if (!clockRunning){
         intervalId = setInterval(count, 1000);
@@ -45,6 +42,7 @@ function start(){
 
 }
 
+// Timer counts down
 function count() {
     if (time > 0){
         time--;
@@ -64,6 +62,7 @@ function count() {
  
 }
 
+// Converts time to seconds
 function timeConverter(t) {
 
     var minutes = Math.floor(t/60);
@@ -88,73 +87,71 @@ function timeConverter(t) {
 $('input[id="radio1c"]').on("click", function() {
 correct++;
 });
+
  //2nd question
   $('input[id="radio2c"]').on("click", function() {
     correct++;
   })
+
+  //3rd question
   $('input[id="radio3b"]').on("click", function() {
     correct++;
   })
+
 //4th question
   $('input[id="radio4a"]').on("click", function() {
     correct++;
   })
+
   //5th question
   $('input[id="radio5c"]').on("click", function() {
     correct++;
   })
+
   //6th question
   $('input[id="radio6b"]').on("click", function() {
     correct++;
   })
+
   //7th question
   $('input[id="radio7d"]').on("click", function() {
     correct++;
   })
+  
   //8th question
   $('input[id="radio8a"]').on("click", function() {
     correct++;
   })
+
   //9th question
   $('input[id="radio9b"]').on("click", function() {
     correct++;
   })
+
   //10th question
   $('input[id="radio10b"]').on("click", function() {
     correct++;
   })
 
-
-
   //11th question
-
-
   $('input[id="radio11d"]').on("click", function() {
     correct++;
-    
   })
 
-
-
  //12th question 
-
   $('input[id="radio12b"]').on("click", function() {
-    correct++;
-    
+    correct++; 
   })
 
 
 
   //13th question
-
-
   $('input[id="radio13c"]').on("click", function() {
+    correct++;
   })
-  correct++;
+  
 
   //14th question  
- 
-
   $('input[id="radio14b"]').on("click", function() {
     correct++;
   })
@@ -162,14 +159,12 @@ correct++;
   //15th question
   $('input[id="radio15a"]').on("click", function() {
     correct++;
- 
   })
   
 
   //16th question
   $('input[id="radio16c"]').on("click", function() {
     correct++;
-    
   });
 
 
@@ -202,7 +197,7 @@ $("#restart").on("click", function (){
   $('input[type=radio]').prop('checked', false);
 
   $(".questionArea").show();
-  $("#restart").show();
+  $("#restart").hide();
   $("#gameOverDisplay").hide();
   $("#correct").hide();
   $("#incorrect").hide();
