@@ -3,402 +3,431 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/images.css">
-        
-    <title>Trivia Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Bootstrap File -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+    
+
+  <title>Trivia Game</title>
 </head>
 
 <body>
 
-<div class="header">
-<h1>Trivia Game</h1>
-</div>
+  <div class="header">
+    <h1>Trivia Game</h1>
+  </div>
 
-<div class="instructions">
-<p class="instructions">Answer all of the questions before time runs out!</p>
-</div>
+  <div class="instructions">
+    <p class="instructions">Answer all of the questions before time runs out!</p>
+  </div>
 
 
 
-<div id="gameStartDisplay">1:00</div>
-<div id="gameOverDisplay">Time's up!
-<br>
-<br>
-<div>Correct: <span id="correct">0</span></div>
-<br>
-<div>Incorrect: <span id="incorrect">0</span></div>
-<br>
-<div>Unanswered: <span id="unanswered">0</span></div>
-</div>
-</div>
+  <div id="gameStartDisplay">1:00</div>
+  <div id="gameOverDisplay">Time's up!
+    <br>
+    <br>
+    <div>Correct: <span id="correct">0</span></div>
+    <br>
+    <div>Incorrect: <span id="incorrect">0</span></div>
+    <br>
+  </div>
+  </div>
 
-<div id="gameResults"></div>
+  <div id="gameResults"></div>
 
-<div id="button">
+  <div id="button">
     <button id="start">Start Game</button>
-</div>
+  </div>
 
-<div id="button">
+  <div id="button">
     <button id="restart">Restart Game</button>
   </div>
 
-<div class="questionArea">
-<div class="question">
+  <!-- $("input[name='radio1']:checked").val() -->
 
-<!--1st question-->
-<p class="q1">1.) When was America discovered?</p>
-<label class="container" id="2006">2006
-  <input type="radio"  name="radio1" id="radio1a">
-  <span class="checkmark"></span>
-</label>
-<label class="container" id="1987">1987
-  <input type="radio" name="radio1" id="radio1b">
-  <span class="checkmark"></span>
-</label>
-<label class="container" id="1492">1492 <!--correct-->
-  <input type="radio" name="radio1" id="radio1c">
-  <span class="checkmark"></span>
-</label>
-<label class="container" id="1493">1493
-  <input type="radio" name="radio1" id="radio1d">
-  <span class="checkmark"></span>
-</label>
-</div>
+  <div class="questionArea">
+    <div class="question">
 
-<!--2nd question-->
-<div class="question">
-<p class="q2">2.) How many continents are there on planet Earth?</p>
-<label class="container">3
-  <input type="radio"  name="radio2" id="radio2a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">4
-  <input type="radio" name="radio2" id="radio2b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">7
-  <input type="radio" name="radio2" id="radio2c"> <!--correct-->
-  <span class="checkmark"></span>
-</label>
-<label class="container">8
-  <input type="radio" name="radio2" id="radio2d">
-  <span class="checkmark"></span>
-</label>
-</div>
+      <!--1st question-->
+      <p class="q1">1.) When was America discovered?</p>
+      <label class="container" id="2006">&nbsp;&nbsp;&nbsp;2006
+        <input type="radio" name="radio1" value="2006" id="radio1a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container" id="1987">&nbsp;&nbsp;&nbsp;1987
+        <input type="radio" name="radio1" value="1987" id="radio1b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container" id="1492">&nbsp;&nbsp;&nbsp;1492
+        <!--correct-->
+        <input type="radio" name="radio1" value="1492" id="radio1c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container" id="1493">&nbsp;&nbsp;&nbsp;1493
+        <input type="radio" name="radio1" value="1493" id="radio1d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--3rd question-->
-<div class="question">
-<p class="q3">3.)What is the largest mammal on planet Earth?</p>
-<label class="container">Giraffe
-  <input type="radio"  name="radio3" id="radio3a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Blue whale <!--correct-->
-  <input type="radio" name="radio3" id="radio3b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Great White Shark
-  <input type="radio" name="radio3" id="radio3c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">African elephant
-  <input type="radio" name="radio3" id="radio3d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--2nd question-->
+    <div class="question">
+      <p class="q2">2.) How many continents are there on planet Earth?</p>
+      <label class="container" id="3">&nbsp;&nbsp;&nbsp;3
+        <input type="radio" name="radio2"  id="radio2a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;4
+        <input type="radio" name="radio2" id="radio2b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;7
+        <input type="radio" name="radio2" id="radio2c">
+        <!--correct-->
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;8
+        <input type="radio" name="radio2" id="radio2d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--4th question-->
-<div class="question">
-<p class="q4">4.) How many teaspoons are in a table spoon?</p>
-<label class="container">3
-  <input type="radio"  name="radio4" id="radio4a"> <!--correct-->
-  <span class="checkmark"></span>
-</label>
-<label class="container">4
-  <input type="radio" name="radio4" id="radio4b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">2.5
-  <input type="radio" name="radio4" id="radio4c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">1.2
-  <input type="radio" name="radio4" id="radio4d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--3rd question-->
+    <div class="question">
+      <p class="q3">3.)What is the largest mammal on planet Earth?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;Giraffe
+        <input type="radio" name="radio3" id="radio3a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Blue whale
+        <!--correct-->
+        <input type="radio" name="radio3" id="radio3b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Great White Shark
+        <input type="radio" name="radio3" id="radio3c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;African elephant
+        <input type="radio" name="radio3" id="radio3d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--5th question-->
-<div class="question">
-<p class="q5">5.) Which famous star appeared in Paula Abdul's music video "Rush, Rush?</p>
-<label class="container">Jack Nicholson
-  <input type="radio"  name="radio5" id="radio5a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Will Smith
-  <input type="radio" name="radio5" id="radio5b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Keanu Reeves <!--correct-->
-  <input type="radio" name="radio5" id="radio5c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Michael Jordan
-  <input type="radio" name="radio5" id="radio5d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--4th question-->
+    <div class="question">
+      <p class="q4">4.) How many teaspoons are in a table spoon?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;3
+        <input type="radio" name="radio4" id="radio4a">
+        <!--correct-->
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;4
+        <input type="radio" name="radio4" id="radio4b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;2.5
+        <input type="radio" name="radio4" id="radio4c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;1.2
+        <input type="radio" name="radio4" id="radio4d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--6th question-->
-<div class="question">
-<p class="q6">6.) Which man is widely credited with inventing peanut butter?</p>
-<label class="container">Mr. Peanut
-  <input type="radio"  name="radio6" id="radio6a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">George Washington Carver <!--correct-->
-  <input type="radio" name="radio6" id="radio6b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Thomas Jefferson
-  <input type="radio" name="radio6" id="radio6c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Ulysses S. Grant 
-  <input type="radio" name="radio6" id="radio6d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--5th question-->
+    <div class="question">
+      <p class="q5">5.) Which famous star appeared in Paula Abdul's music video "Rush, Rush?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;Jack Nicholson
+        <input type="radio" name="radio5" id="radio5a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Will Smith
+        <input type="radio" name="radio5" id="radio5b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Keanu Reeves
+        <!--correct-->
+        <input type="radio" name="radio5" id="radio5c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Michael Jordan
+        <input type="radio" name="radio5" id="radio5d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--7th question-->
-<div class="question">
-<p class="q7">7.) What color would you get if you mixed all colors together?</p>
-<label class="container">Black
-  <input type="radio"  name="radio7" id="radio7a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Brown
-  <input type="radio" name="radio7" id="radio7b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Gray
-  <input type="radio" name="radio7" id="radio7c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">White 
-  <input type="radio" name="radio7" id="radio7d"> <!--correct-->
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--6th question-->
+    <div class="question">
+      <p class="q6">6.) Which man is widely credited with inventing peanut butter?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;Mr. Peanut
+        <input type="radio" name="radio6" id="radio6a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;George Washington Carver
+        <!--correct-->
+        <input type="radio" name="radio6" id="radio6b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Thomas Jefferson
+        <input type="radio" name="radio6" id="radio6c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Ulysses S. Grant
+        <input type="radio" name="radio6" id="radio6d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--8th question-->
-<div class="question">
-<p class="q8">8.) What is the hottest planet in our solar system?</p>
-<label class="container">Venus
-  <input type="radio"  name="radio8" id="radio8a"> <!--correct-->
-  <span class="checkmark"></span>
-</label>
-<label class="container">Mars
-  <input type="radio" name="radio8" id="radio8b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Pluto
-  <input type="radio" name="radio8" id="radio8c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Jupiter 
-  <input type="radio" name="radio8" id="radio8d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--7th question-->
+    <div class="question">
+      <p class="q7">7.) What color would you get if you mixed all colors together?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;Black
+        <input type="radio" name="radio7" id="radio7a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Brown
+        <input type="radio" name="radio7" id="radio7b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Gray
+        <input type="radio" name="radio7" id="radio7c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;White
+        <input type="radio" name="radio7" id="radio7d">
+        <!--correct-->
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--9th question-->
-<div class="question">
-<p class="q9">9.) How many bones are there in the adult human body?</p>
-<label class="container">205
-  <input type="radio"  name="radio9" id="radio9a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">206 <!--correct answer-->
-  <input type="radio" name="radio9" id="radio9b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">314
-  <input type="radio" name="radio9" id="radio9c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">197 
-  <input type="radio" name="radio9" id="radio9d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--8th question-->
+    <div class="question">
+      <p class="q8">8.) What is the hottest planet in our solar system?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;Venus
+        <input type="radio" name="radio8" id="radio8a">
+        <!--correct-->
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Mars
+        <input type="radio" name="radio8" id="radio8b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Pluto
+        <input type="radio" name="radio8" id="radio8c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Jupiter
+        <input type="radio" name="radio8" id="radio8d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--10th question-->
-<div class="question">
-<p class="q10">10.) What is the rarest blood type?</p>
-<label class="container">AB positive
-  <input type="radio"  name="radio10" id="radio10a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">AB negative <!--correct answer-->
-  <input type="radio" name="radio10" id="radio10b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">O negative
-  <input type="radio" name="radio10" id="radio10c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">B negative 
-  <input type="radio" name="radio10" id="radio10d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--9th question-->
+    <div class="question">
+      <p class="q9">9.) How many bones are there in the adult human body?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;205
+        <input type="radio" name="radio9" id="radio9a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;206
+        <!--correct answer-->
+        <input type="radio" name="radio9" id="radio9b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;314
+        <input type="radio" name="radio9" id="radio9c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;197
+        <input type="radio" name="radio9" id="radio9d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--11th question-->
-<div class="question">
-<p class="q11">11.) Who was the youngest president of the U.S?</p>
-<label class="container">Ronald Reagan
-  <input type="radio"  name="radio11" id="radio11a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">John F. Kenedy
-  <input type="radio" name="radio11" id="radio11b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Thomas Jefferson
-  <input type="radio" name="radio11" id="radio11c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Theodore Roosevelt <!--correct answer-->
-  <input type="radio" name="radio11" id="radio11d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--10th question-->
+    <div class="question">
+      <p class="q10">10.) What is the rarest blood type?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;AB positive
+        <input type="radio" name="radio10" id="radio10a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;AB negative
+        <!--correct answer-->
+        <input type="radio" name="radio10" id="radio10b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;O negative
+        <input type="radio" name="radio10" id="radio10c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;B negative
+        <input type="radio" name="radio10" id="radio10d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--12th question-->
-<div class="question">
-<p class="q12">12.) What was the name of the department store in the movie 'Miracle on 34th St.'?</p>
-<label class="container">Sears
-  <input type="radio"  name="radio12" id="radio12a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Cole's <!--correct answer-->
-  <input type="radio" name="radio12" id="radio12b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Dillards
-  <input type="radio" name="radio12" id="radio12c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">JC Penney 
-  <input type="radio" name="radio12" id="radio12d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--11th question-->
+    <div class="question">
+      <p class="q11">11.) Who was the youngest president of the U.S?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;Ronald Reagan
+        <input type="radio" name="radio11" id="radio11a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;John F. Kenedy
+        <input type="radio" name="radio11" id="radio11b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Thomas Jefferson
+        <input type="radio" name="radio11" id="radio11c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Theodore Roosevelt
+        <!--correct answer-->
+        <input type="radio" name="radio11" id="radio11d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--13th question-->
-<div class="question">
-<p class="q13">13.) Who holds the record for the longest winning streak in college football?</p>
-<label class="container">Notre Dame Fighting Irish
-  <input type="radio"  name="radio13" id="radio13a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Nebraska Cornhuskers
-  <input type="radio" name="radio13" id="radio13b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Oklahoma Sooners <!--correct answer-->
-  <input type="radio" name="radio13" id="radio13c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Alabame Crimson Tide 
-  <input type="radio" name="radio13" id="radio13d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--12th question-->
+    <div class="question">
+      <p class="q12">12.) What was the name of the department store in the movie 'Miracle on 34th St.'?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;Sears
+        <input type="radio" name="radio12" id="radio12a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Cole's
+        <!--correct answer-->
+        <input type="radio" name="radio12" id="radio12b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Dillards
+        <input type="radio" name="radio12" id="radio12c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;JC Penney
+        <input type="radio" name="radio12" id="radio12d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--14th question-->
-<div class="question">
-<p class="q14">14.) Who was the last non-quarteback to win NFL MVP?</p>
-<label class="container">Rob Gronkowski
-  <input type="radio"  name="radio14" id="radio14a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Adrian Peterson <!--correct answer-->
-  <input type="radio" name="radio14" id="radio14b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">J.J. Watt
-  <input type="radio" name="radio14" id="radio14c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Steven Gostkowski 
-  <input type="radio" name="radio14" id="radio14d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--13th question-->
+    <div class="question">
+      <p class="q13">13.) Who holds the record for the longest winning streak in college football?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;Notre Dame Fighting Irish
+        <input type="radio" name="radio13" id="radio13a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Nebraska Cornhuskers
+        <input type="radio" name="radio13" id="radio13b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Oklahoma Sooners
+        <!--correct answer-->
+        <input type="radio" name="radio13" id="radio13c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Alabame Crimson Tide
+        <input type="radio" name="radio13" id="radio13d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--15th question-->
-<div class="question">
-<p class="q15">15.) Fe is the chemical symbol for which element?</p>
-<label class="container">Iron
-  <input type="radio"  name="radio15" id="radio15a"> <!--correct answer-->
-  <span class="checkmark"></span>
-</label>
-<label class="container">Calcium
-  <input type="radio" name="radio15" id="radio15b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Hydrogen
-  <input type="radio" name="radio15" id="radio15c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Nickel 
-  <input type="radio" name="radio15" id="radio15d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--14th question-->
+    <div class="question">
+      <p class="q14">14.) Who was the last non-quarteback to win NFL MVP?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;Rob Gronkowski
+        <input type="radio" name="radio14" id="radio14a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Adrian Peterson
+        <!--correct answer-->
+        <input type="radio" name="radio14" id="radio14b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;J.J. Watt
+        <input type="radio" name="radio14" id="radio14c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Steven Gostkowski
+        <input type="radio" name="radio14" id="radio14d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<!--16th question-->
-<div class="question">
-<p class="q16">16.) How many black keys does a piano have?</p>
-<label class="container">27
-  <input type="radio"  name="radio16" id="radio16a">
-  <span class="checkmark"></span>
-</label>
-<label class="container">38
-  <input type="radio" name="radio16" id="radio16b">
-  <span class="checkmark"></span>
-</label>
-<label class="container">36 <!--correct answer-->
-  <input type="radio" name="radio16" id="radio16c">
-  <span class="checkmark"></span>
-</label>
-<label class="container">49 
-  <input type="radio" name="radio16" id="radio16d">
-  <span class="checkmark"></span>
-</label>
-</div>
+    <!--15th question-->
+    <div class="question">
+      <p class="q15">15.) Fe is the chemical symbol for which element?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;Iron
+        <input type="radio" name="radio15" id="radio15a">
+        <!--correct answer-->
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Calcium
+        <input type="radio" name="radio15" id="radio15b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Hydrogen
+        <input type="radio" name="radio15" id="radio15c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;Nickel
+        <input type="radio" name="radio15" id="radio15d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
 
-<div id="button">
-    <button id="submit">Submit Answers</button>
-</div>
+    <!--16th question-->
+    <div class="question">
+      <p class="q16">16.) How many black keys does a piano have?</p>
+      <label class="container">&nbsp;&nbsp;&nbsp;27
+        <input type="radio" name="radio16" id="radio16a">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;38
+        <input type="radio" name="radio16" id="radio16b">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;36
+        <!--correct answer-->
+        <input type="radio" name="radio16" id="radio16c">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">&nbsp;&nbsp;&nbsp;49
+        <input type="radio" name="radio16" id="radio16d">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+    <div id="button">
+      <button id="submit">Submit Answers</button>
+    </div>
 
 
-</div>
+  </div>
 
-<!-- </div> -->
+  <!-- </div> -->
 
-   <!-- jQuery -->
-   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-   <!-- Script -->
-   <script type="text/javascript" src="assets/javascript/app.js"></script>
+  <!-- Script -->
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
 
 
 </body>
+
 </html>

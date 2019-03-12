@@ -19,6 +19,18 @@ body{
     background: url(../images/background.jpg)
 }
 
+body{
+    background-color:#d2d2d2;
+   }
+   #canvas{
+    background-color:#000;
+    display:block;
+    margin:auto;
+   }
+   #logo{
+    display:none;
+   }
+
 #gameStartDisplay{
     text-align: center;
     color:black;
@@ -44,6 +56,7 @@ body{
 #restart{
     width:20%;
     margin-left:40%;
+    margin-top:5%;
 }
 
 #submit{
@@ -165,6 +178,7 @@ p{
   /* On mouse-over, add a grey background color */
   .container:hover input ~ .checkmark1 {
     background-color: #ccc;
+    margin-left:-30px;
   }
   
   /* When the radio button is checked, add a blue background */
